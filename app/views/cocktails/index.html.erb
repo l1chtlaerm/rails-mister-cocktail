@@ -1,0 +1,10 @@
+<div class="container d-flex justify-content-center mt-3">
+  <% @cocktails.each do |cocktail| %>
+  <div class="card d-inline-flex p-3">
+    <%= link_to cocktail.name, cocktail_path(cocktail) %>
+  </div>
+  <% end %>
+
+  <%= link_to "New Cocktail", new_cocktail_path %>
+</div>
+
