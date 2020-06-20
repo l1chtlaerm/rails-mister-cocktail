@@ -1,4 +1,9 @@
-<%= simple_form_for @cocktail do |f| %>
-<%= f.input :name %>
-<%= f.submit %>
-<% end %>
+<div class="container pt-3">
+  <h3>New Blackouter</h3>
+  <%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit, "Create New Blackouter!", class: "btn btn-warning my-2 my-sm-0" %>
+  <% end %>
+</div>
+
+
