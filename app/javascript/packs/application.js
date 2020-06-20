@@ -4,6 +4,7 @@
 // that code so it'll be compiled.
 
 import 'bootstrap';
+import { initSelect2 } from '../components/init_select2';
 
 require("@rails/ujs").start()
 require("turbolinks").start()
@@ -17,3 +18,6 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+
+initSelect2();

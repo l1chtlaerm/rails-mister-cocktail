@@ -1,10 +1,9 @@
-
-
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.img %>);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.img %>);">
   <div class="container">
     <h1><%= @cocktail.name %></h1>
   </div>
 </div>
+
 <div class="container mr-0 d-flex justify-content-between pt-3">
 
   <div class="card pl-3" style="background-color: transparent; border-style: none;">
@@ -19,9 +18,22 @@
     <h3>Add Ingredients!</h3>
     <%= render "doses/new" %>
   </div>
-
 </div>
 
+<hr>
 
+<div class="container ml-0">
+  <div class="container">
+    <ul class="list-group">
+      <% @cocktail.reviews.each do |review| %>
+        <li class="list-group-item"><%= review.content %> - <%= "⭐" * review.rating %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="card mx-3 p-3 m-3 w-50">
+    <h3>LEAVE A REVIEW</h3>
+    <%= render 'reviews/new' %>
+  </div>
+</div>
 
 
