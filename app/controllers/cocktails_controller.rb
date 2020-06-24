@@ -18,7 +18,7 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    @cocktail.img = source_img
+    # @cocktail.img = source_img
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
@@ -28,12 +28,12 @@ class CocktailsController < ApplicationController
 
   private
 
-  def source_img
-    URI.open("https://source.unsplash.com/random/?cocktail").base_uri
-  end
+  # def source_img
+  #   URI.open("https://source.unsplash.com/random/?cocktail").base_uri
+  # end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :img)
+    params.require(:cocktail).permit(:name, :photo)
   end
 
   def find_cocktail
