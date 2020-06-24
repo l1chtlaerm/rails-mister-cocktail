@@ -18,7 +18,7 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    @cocktail.photo = source_img unless @cocktail.photo.attached?
+    @cocktail.photo.attach(io: source_img, filename: "#{@cocktail.name}.png", content_type: 'image/png') unless @cocktail.photo.attached?
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
@@ -29,7 +29,7 @@ class CocktailsController < ApplicationController
   private
 
   def source_img
-    Cloudinary::Uploader.upload("https://source.unsplash.com/random/?#{@cocktail.name}+cocktail")
+    URI.open("https://source.unsplash.com/random/?#{@cocktail.name}+cocktail")
   end
 
   def cocktail_params
