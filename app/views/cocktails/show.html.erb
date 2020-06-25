@@ -1,4 +1,9 @@
+
+<% if @cocktail.photo.present? %>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.photo.key %>')">
+<% else %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @cocktail.img %>')">
+<% end %>
   <div class="container">
     <h1><%= @cocktail.name %></h1>
   </div>
