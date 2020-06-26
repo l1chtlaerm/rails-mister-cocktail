@@ -57,3 +57,7 @@ Ingredient.create!(name: "Bitters")
 Ingredient.create!(name: "Sugar")
 
 Ingredient.create!(name: "Kahlua")
+
+Ingredient.create!(name: "Fernet")
+
+Ingredient.create!(name: "Coca-Cola")

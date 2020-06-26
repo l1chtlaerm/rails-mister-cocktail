@@ -1,8 +1,4 @@
-<% if @cocktail.photo.present? %>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.photo.key %>')">
-<% else %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @cocktail.img %>')">
-<% end %>
   <div class="container">
     <h1><%= @cocktail.name %></h1>
   </div>
@@ -10,7 +6,7 @@
 
 <div class="container mr-0 d-flex justify-content-between pt-3">
 
-  <div class="card pl-3" style="background-color: transparent; border-style: none;">
+  <div class="card pl-3" style="background-color: transparent; border-style: none; color: white; font-size: 18px; font-weight: bolder; text-shadow: 0 0 10px rgba(0,0,0,0.7);">
     <ul>
     <% @cocktail.doses.each do |dose| %>
       <li><%= dose.ingredient.name %> - <content class="clearer">(<%= dose.description %>)</content> <%= link_to "🗑️", dose_path(dose), method: :delete %></li>
@@ -35,7 +31,7 @@
     </ul>
   </div>
   <div class="card mx-3 p-3 m-3 w-50">
-    <h3>LEAVE A REVIEW</h3>
+    <h3>Leave a Review!</h3>
     <%= render 'reviews/new' %>
   </div>
 </div>
